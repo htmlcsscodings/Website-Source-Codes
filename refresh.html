@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Website</title>
+<!-- meta http-equiv="refresh"
+content="5"/-->
+</head>
+<body>
+<h1>
+<center>
+Hello Everyone✋✋
+</center>
+</h1>
+<script>
+alert("The Website Is Going To Refresh");
+let counter = 0;
+setInterval(() => {
+document.querySelector('h1').innerText = counter;
+counter++;
+if(counter > 6) location.reload();
+}, 1000);
+</script>
+</body>
+</html>
