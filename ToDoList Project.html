@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do List</title>
+<meta charset="utf-8" />
+</head>
+
+<body>
+<center><h2>To-Do List</h2></center>
+<center><b>Note: Make Sure To Enter As (Task 1:) along with Tasks You Enter</b></center>
+<br>
+<br>
+<input id="inputField" type="text"><button id="addToDo">+</button>
+<div class="to-dos" id="toDoContainer">
+</div>
+<p class="paragraph-styling"></p>
+
+<style>
+
+#inputField
+ {
+   border: 2px solid black;
+   height: 30px;
+   font-size: 15px;
+   font-weight: bold;
+   outline: none;
+   margin-left: 50px;
+ }
+ 
+ #addToDo
+ {
+   height: 30px;
+   width: 30px;
+   margin-left: 7px;
+   border: 2px solid black;
+   outline: none;
+   font-size: 15px;
+ }
+ 
+ .paragraph-styling
+ {
+    margin-left: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+ }
+</style>
+
+<script>
+
+alert("Welcome , Make Your Tasks Here!!");
+let addToDoButton = document.getElementById('addToDo');
+let toDoContainer = document.getElementById('toDoContainer');
+let inputField = document.getElementById('inputField');
+
+addToDoButton.addEventListener('click', function() {
+
+var paragraph = document.createElement('p');
+paragraph.classList.add('paragraph-styling');
+paragraph.innerText = inputField.value;
+toDoContainer.appendChild(paragraph);
+inputField.value="";
+paragraph.addEventListener('click', function() {
+paragraph.style.textDecoration = "line-through";
+})
+paragraph.addEventListener('dblclick', function() {
+toDoContainer.removeChild(paragraph);
+})
+})
+</script>
+</body>
+</html>
