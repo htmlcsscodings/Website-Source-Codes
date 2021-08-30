@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do List</title>
+<meta charset="utf-8" />
+</head>
+
+<body bgcolor="black">
+<div class="card">
+<center><h2>To-do List</h2></center>
+<center><b>1) Enter (Task1:) Before Entering Tasks.
+<br>
+2) Click To Strike , Double Click To Vanish.</b></center>
+<br>
+<br>
+<input id="inputField" type="text"><button id="addToDo">+</button>
+<div class="to-dos" id="toDoContainer">
+</div>
+<p class="paragraph-styling"></p>
+</div>
+<div class="footer">
+<br>
+<b>© Copyright-2021 | Ragunathan S</b>
+</div>
+
+<style>
+
+center h2
+{
+   color: white;
+   font-family: Helvetica;
+}
+
+center b
+{
+  color: white;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+#inputField
+ {
+   height: 30px;
+   font-size: 15px;
+   font-weight: bold;
+   outline: none;
+   margin-left: 50px;
+   color: black;
+   font-family: monospace;
+ }
+ 
+ #addToDo
+ {
+   height: 33px;
+   width: 30px;
+   margin-left: 7px;
+   border: 1px solid white;
+   outline: none;
+   font-size: 1.4rem;
+   font-weight: 800;
+   font-family: monospace;
+   
+ }
+ 
+ .paragraph-styling
+ {
+    margin-left: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    font-family: Georgia;
+ }
+ 
+ .card
+ {
+    width: 100%;
+    height: auto;
+    background: black;
+    border: 3px solid #ffc300;
+    
+ }
+ 
+ .footer
+ {
+    width: 95%;
+    height: 130px;
+    border: 2px solid #00ffff;
+    position: fixed;
+    margin-top: 82%;
+    background-color: black;
+  }
+  
+  .footer b
+  {
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-left: 4%;
+    
+  }
+</style>
+
+<script>
+
+alert("Welcome , Make Your Tasks Here!!");
+let addToDoButton = document.getElementById('addToDo');
+let toDoContainer = document.getElementById('toDoContainer');
+let inputField = document.getElementById('inputField');
+
+addToDoButton.addEventListener('click', function() {
+
+var paragraph = document.createElement('p');
+paragraph.classList.add('paragraph-styling');
+paragraph.innerText = inputField.value;
+toDoContainer.appendChild(paragraph);
+inputField.value="";
+paragraph.addEventListener('click', function() {
+paragraph.style.textDecoration = "line-through";
+})
+paragraph.addEventListener('dblclick', function() {
+toDoContainer.removeChild(paragraph);
+})
+})
+</script>
+</body>
+</html>
